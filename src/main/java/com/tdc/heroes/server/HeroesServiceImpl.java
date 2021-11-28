@@ -26,11 +26,11 @@ public class HeroesServiceImpl extends HeroesServiceGrpc.HeroesServiceImplBase {
                 .setHero(newHero)
                 .build();
 
-        responseObserver.onNext(heroResponse);
-        responseObserver.onCompleted();
-
         System.out.println("Hero created: " + newHero);
         this.heroes.add(newHero);
+
+        responseObserver.onNext(heroResponse);
+        responseObserver.onCompleted();
     }
 
     @Override
