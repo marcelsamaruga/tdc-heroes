@@ -4,4 +4,6 @@
 *.idea*
 build/
 build/*
+.DS_Store
+gradle/wrapper
 *.class*
