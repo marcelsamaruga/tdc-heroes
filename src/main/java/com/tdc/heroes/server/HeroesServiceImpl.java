@@ -17,19 +17,22 @@ public class HeroesServiceImpl extends HeroesServiceGrpc.HeroesServiceImplBase {
 
     @Override
     public void createHero(CreateHeroRequest request, StreamObserver<CreateHeroResponse> responseObserver) {
-        Hero newHero = Hero.newBuilder()
-                .setNickname(request.getNickname())
-                .addAllSkills(request.getSkillsList())
-                .build();
+        for (int i = 0; i < 100; i++) {
+            Hero newHero = Hero.newBuilder()
+                    .setNickname(request.getNickname()+ " -> " + i)
+                    .addAllSkills(request.getSkillsList())
+                    .build();
 
-        CreateHeroResponse heroResponse = CreateHeroResponse.newBuilder()
-                .setHero(newHero)
-                .build();
+            CreateHeroResponse heroResponse = CreateHeroResponse.newBuilder()
+                    .setHero(newHero)
+                    .build();
 
-        System.out.println("Hero created: " + newHero);
-        this.heroes.add(newHero);
+            System.out.println("Hero created: " + newHero);
+            this.heroes.add(newHero);
 
-        responseObserver.onNext(heroResponse);
+            responseObserver.onNext(heroResponse);
+        }
+
         responseObserver.onCompleted();
     }
 

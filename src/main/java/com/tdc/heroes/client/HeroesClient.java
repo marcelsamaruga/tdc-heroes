@@ -20,7 +20,7 @@ public class HeroesClient {
         ManagedChannel channel = openChannel();
 
         // unary request (blocking stub)
-            HeroesServiceGrpc.HeroesServiceBlockingStub heroesStub = HeroesServiceGrpc.newBlockingStub(channel);
+        HeroesServiceGrpc.HeroesServiceBlockingStub heroesStub = HeroesServiceGrpc.newBlockingStub(channel);
 
         // create a new hero
         CreateHeroRequest createBatmanRequest = CreateHeroRequest.newBuilder()
@@ -30,28 +30,11 @@ public class HeroesClient {
                 .build();
 
         // invoke gRPC service [createHero]
-        CreateHeroResponse createBatmanResponse = heroesStub.createHero(createBatmanRequest);
-        System.out.println("New hero: " + createBatmanResponse);
-
-        // create a new hero
-        CreateHeroRequest createFlashRequest = CreateHeroRequest.newBuilder()
-                .addSkills(Skill.newBuilder().setStrength("super speed").build())
-                .addSkills(Skill.newBuilder().setStrength("time travel").build())
-                .setNickname("Flash")
-                .build();
-
-        // invoke gRPC service [createHero]
-        CreateHeroResponse createFlashResponse = heroesStub.createHero(createFlashRequest);
-        System.out.println("New hero: " + createFlashResponse);
+        System.out.println("Printing streaming of heroes");
+        heroesStub.createHero(createBatmanRequest)
+            .forEachRemaining(System.out::println);
 
         // **** **** ****
-
-        // invoke gRPC service [listHeroes]
-        ListHeroesResponse listHeroesResponse =
-                heroesStub.listHeroes(ListHeroesRequest.newBuilder().build());
-
-        System.out.println("List of heroes: " + listHeroesResponse.getHeroesList());
-
         channel.shutdown();
     }
 
