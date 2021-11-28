@@ -1,0 +1,96 @@
+com/tdc/heroes/client/HeroesClient.java
+ com.tdc.heroes.client.HeroesClient
+source/proto/main/java/com/tdc/heroes/TeamOrBuilder.java
+ com.tdc.heroes.TeamOrBuilder
+source/proto/main/java/com/tdc/heroes/MissionOrBuilder.java
+ com.tdc.heroes.MissionOrBuilder
+source/proto/main/java/com/tdc/heroes/CreateHeroResponseOrBuilder.java
+ com.tdc.heroes.CreateHeroResponseOrBuilder
+source/proto/main/java/com/tdc/heroes/Heroes.java
+ com.tdc.heroes.Heroes
+source/proto/main/java/com/tdc/heroes/Team.java
+ com.tdc.heroes.Team
+ com.tdc.heroes.Team$1
+ com.tdc.heroes.Team$Builder
+source/proto/main/java/com/tdc/heroes/Hero.java
+ com.tdc.heroes.Hero
+ com.tdc.heroes.Hero$1
+ com.tdc.heroes.Hero$Builder
+source/proto/main/java/com/tdc/heroes/SkillOrBuilder.java
+ com.tdc.heroes.SkillOrBuilder
+source/proto/main/java/com/tdc/heroes/HeroOrBuilder.java
+ com.tdc.heroes.HeroOrBuilder
+source/proto/main/java/com/tdc/heroes/NewMissionRequestOrBuilder.java
+ com.tdc.heroes.NewMissionRequestOrBuilder
+com/tdc/heroes/server/HeroesServiceImpl.java
+ com.tdc.heroes.server.HeroesServiceImpl
+source/proto/main/java/com/tdc/heroes/Skill.java
+ com.tdc.heroes.Skill
+ com.tdc.heroes.Skill$1
+ com.tdc.heroes.Skill$Builder
+source/proto/main/grpc/com/tdc/heroes/LaunchMissionServiceGrpc.java
+ com.tdc.heroes.LaunchMissionServiceGrpc
+ com.tdc.heroes.LaunchMissionServiceGrpc$1
+ com.tdc.heroes.LaunchMissionServiceGrpc$LaunchMissionServiceBaseDescriptorSupplier
+ com.tdc.heroes.LaunchMissionServiceGrpc$LaunchMissionServiceBlockingStub
+ com.tdc.heroes.LaunchMissionServiceGrpc$LaunchMissionServiceFileDescriptorSupplier
+ com.tdc.heroes.LaunchMissionServiceGrpc$LaunchMissionServiceFutureStub
+ com.tdc.heroes.LaunchMissionServiceGrpc$LaunchMissionServiceImplBase
+ com.tdc.heroes.LaunchMissionServiceGrpc$LaunchMissionServiceMethodDescriptorSupplier
+ com.tdc.heroes.LaunchMissionServiceGrpc$LaunchMissionServiceStub
+ com.tdc.heroes.LaunchMissionServiceGrpc$MethodHandlers
+source/proto/main/java/com/tdc/heroes/EmptyOrBuilder.java
+ com.tdc.heroes.EmptyOrBuilder
+com/tdc/heroes/server/HeroesServer.java
+ com.tdc.heroes.server.HeroesServer
+source/proto/main/java/com/tdc/heroes/ListHeroesResponseOrBuilder.java
+ com.tdc.heroes.ListHeroesResponseOrBuilder
+source/proto/main/java/com/tdc/heroes/Empty.java
+ com.tdc.heroes.Empty
+ com.tdc.heroes.Empty$1
+ com.tdc.heroes.Empty$Builder
+source/proto/main/java/com/tdc/heroes/NewMissionResponse.java
+ com.tdc.heroes.NewMissionResponse
+ com.tdc.heroes.NewMissionResponse$1
+ com.tdc.heroes.NewMissionResponse$Builder
+source/proto/main/grpc/com/tdc/heroes/HeroesServiceGrpc.java
+ com.tdc.heroes.HeroesServiceGrpc
+ com.tdc.heroes.HeroesServiceGrpc$1
+ com.tdc.heroes.HeroesServiceGrpc$HeroesServiceBaseDescriptorSupplier
+ com.tdc.heroes.HeroesServiceGrpc$HeroesServiceBlockingStub
+ com.tdc.heroes.HeroesServiceGrpc$HeroesServiceFileDescriptorSupplier
+ com.tdc.heroes.HeroesServiceGrpc$HeroesServiceFutureStub
+ com.tdc.heroes.HeroesServiceGrpc$HeroesServiceImplBase
+ com.tdc.heroes.HeroesServiceGrpc$HeroesServiceMethodDescriptorSupplier
+ com.tdc.heroes.HeroesServiceGrpc$HeroesServiceStub
+ com.tdc.heroes.HeroesServiceGrpc$MethodHandlers
+source/proto/main/java/com/tdc/heroes/ListHeroesRequest.java
+ com.tdc.heroes.ListHeroesRequest
+ com.tdc.heroes.ListHeroesRequest$1
+ com.tdc.heroes.ListHeroesRequest$Builder
+source/proto/main/java/com/tdc/heroes/CreateHeroRequest.java
+ com.tdc.heroes.CreateHeroRequest
+ com.tdc.heroes.CreateHeroRequest$1
+ com.tdc.heroes.CreateHeroRequest$Builder
+source/proto/main/java/com/tdc/heroes/CreateHeroRequestOrBuilder.java
+ com.tdc.heroes.CreateHeroRequestOrBuilder
+source/proto/main/java/com/tdc/heroes/NewMissionResponseOrBuilder.java
+ com.tdc.heroes.NewMissionResponseOrBuilder
+source/proto/main/java/com/tdc/heroes/CreateHeroResponse.java
+ com.tdc.heroes.CreateHeroResponse
+ com.tdc.heroes.CreateHeroResponse$1
+ com.tdc.heroes.CreateHeroResponse$Builder
+source/proto/main/java/com/tdc/heroes/ListHeroesRequestOrBuilder.java
+ com.tdc.heroes.ListHeroesRequestOrBuilder
+source/proto/main/java/com/tdc/heroes/Mission.java
+ com.tdc.heroes.Mission
+ com.tdc.heroes.Mission$1
+ com.tdc.heroes.Mission$Builder
+source/proto/main/java/com/tdc/heroes/NewMissionRequest.java
+ com.tdc.heroes.NewMissionRequest
+ com.tdc.heroes.NewMissionRequest$1
+ com.tdc.heroes.NewMissionRequest$Builder
+source/proto/main/java/com/tdc/heroes/ListHeroesResponse.java
+ com.tdc.heroes.ListHeroesResponse
+ com.tdc.heroes.ListHeroesResponse$1
+ com.tdc.heroes.ListHeroesResponse$Builder
