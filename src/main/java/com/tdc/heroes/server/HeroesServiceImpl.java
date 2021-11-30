@@ -6,6 +6,7 @@ import com.tdc.heroes.Hero;
 import com.tdc.heroes.HeroesServiceGrpc;
 import com.tdc.heroes.ListHeroesRequest;
 import com.tdc.heroes.ListHeroesResponse;
+import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 
 import java.util.HashMap;
@@ -42,27 +43,23 @@ public class HeroesServiceImpl extends HeroesServiceGrpc.HeroesServiceImplBase {
                                     .addAllSkills(createHeroRequest.getSkillsList())
                                     .build());
 
-                    if (heroes.size() > 1) {
-                        throw new RuntimeException("Hero should be unique on the request");
-                    }
-
                     System.out.println("New hero created: " + createHeroRequest.getNickname());
+
+                    responseObserver.onNext(
+                            CreateHeroResponse.newBuilder()
+                                    .setHero(heroes.values().stream().findFirst().get())
+                                    .build()
+                    );
                 }
             }
 
             @Override
             public void onError(Throwable t) {
-                System.out.println("An error has happened: " + t);
+                throw new RuntimeException(Status.ABORTED.asException());
             }
 
             @Override
             public void onCompleted() {
-                responseObserver.onNext(
-                       CreateHeroResponse.newBuilder()
-                               .setHero(heroes.values().stream().findFirst().get())
-                               .build()
-                );
-
                 responseObserver.onCompleted();
             }
         };

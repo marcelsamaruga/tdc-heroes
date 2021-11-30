@@ -27,25 +27,31 @@ public class HeroesClient {
 
         // invoke gRPC service [createHero]
         CountDownLatch latch = new CountDownLatch(1);
-        StreamObserver<CreateHeroRequest> createBatmanObserver = heroesStub.createHero(new CreateHeroResponseStreamObserver(latch));
+        StreamObserver<CreateHeroRequest> createHeroObserver = heroesStub.createHero(new CreateHeroResponseStreamObserver(latch));
 
-        createBatmanObserver.onNext(
+        createHeroObserver.onNext(
             createHero("Batman", "wealth")
         );
 
-        createBatmanObserver.onNext(
+        createHeroObserver.onNext(
                 createHero("Batman", "martial arts")
         );
 
-        createBatmanObserver.onNext(
-                createHero("Batman", "weapon skills")
+        try {
+            Thread.sleep(5000);
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        }
+
+        createHeroObserver.onNext(
+                createHero("Flash", "super speed")
         );
 
-        createBatmanObserver.onNext(
-                createHero("Batman", "wisdom")
+        createHeroObserver.onNext(
+                createHero("Flash", "time travel")
         );
 
-        createBatmanObserver.onCompleted();
+        createHeroObserver.onCompleted();
 
         latch.await();
 
@@ -71,14 +77,13 @@ public class HeroesClient {
 
         @Override
         public void onNext(CreateHeroResponse heroCreated) {
-            System.out.println(heroCreated);
+            System.out.println("Hero has been created or updated: " + heroCreated);
         }
 
         @Override
         public void onError(Throwable t) {
             Status error = Status.fromCode(Status.Code.UNKNOWN);
-            System.out.println(error.withDescription("An error has happened on client CreateHeroRequest"));
-            throw new RuntimeException(error.asException());
+            throw new RuntimeException(error.withDescription("Error description").asException());
         }
 
         @Override

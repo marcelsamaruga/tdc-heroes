@@ -61,7 +61,7 @@ message NewMissionResponse {
 
 // SERVICE
 service HeroesService {
-  rpc createHero(stream CreateHeroRequest) returns (CreateHeroResponse) {};
+  rpc createHero(stream CreateHeroRequest) returns (stream CreateHeroResponse) {};
   rpc listHeroes(ListHeroesRequest) returns (ListHeroesResponse) {};
 }
 
