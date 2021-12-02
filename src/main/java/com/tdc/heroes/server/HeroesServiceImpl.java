@@ -22,12 +22,13 @@ public class HeroesServiceImpl extends HeroesServiceGrpc.HeroesServiceImplBase {
                 .addAllSkills(request.getSkillsList())
                 .build();
 
+        System.out.println("Hero created: " + newHero);
+        this.heroes.add(newHero);
+
+        // **** ****
         CreateHeroResponse heroResponse = CreateHeroResponse.newBuilder()
                 .setHero(newHero)
                 .build();
-
-        System.out.println("Hero created: " + newHero);
-        this.heroes.add(newHero);
 
         responseObserver.onNext(heroResponse);
         responseObserver.onCompleted();

@@ -20,7 +20,7 @@ public class HeroesClient {
         ManagedChannel channel = openChannel();
 
         // unary request (blocking stub)
-            HeroesServiceGrpc.HeroesServiceBlockingStub heroesStub = HeroesServiceGrpc.newBlockingStub(channel);
+        HeroesServiceGrpc.HeroesServiceBlockingStub heroesStub = HeroesServiceGrpc.newBlockingStub(channel);
 
         // create a new hero
         CreateHeroRequest createBatmanRequest = CreateHeroRequest.newBuilder()
